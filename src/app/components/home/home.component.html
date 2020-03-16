@@ -20,17 +20,9 @@
 
 <div class="container animated fadeIn">
   <div class="card-columns">
-    <div class="card" *ngFor="let heroe of heros; let i = index">
-      <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
-      <div class="card-body">
-        <h5 class="card-title">{{ heroe.nombre }}</h5>
-        <p class="card-text">{{ heroe.bio }}</p>
-        <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
-        <a [routerLink]="['/heroes', i]" class="btn btn-outline-primary btn-block">
-          Ver mas...
-        </a>
-      </div>
-    </div>
+
+    <app-search (heroeSeleccionado)="verHeroe($event)" *ngFor="let hero of heros; let i = index" [heroe]="hero">
+    </app-search>
 
   </div>
 </div>

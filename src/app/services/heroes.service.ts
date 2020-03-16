@@ -82,4 +82,16 @@ export class HeroesService {
 
     return herosArr;
   }
+
+  searchByName(name: string) {
+    let i = 0;
+    for (let index = 0; index < this.heroes.length; index++) {
+      const element = this.heroes[index];
+      if (element.nombre === name) {
+        i = index;
+        break;
+      }
+    }
+    return i;
+  }
 }

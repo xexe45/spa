@@ -10,11 +10,13 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 /** */
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
 import { HeroesComponent } from "./components/heroes/heroes.component";
 import { HeroeComponent } from "./components/heroe/heroe.component";
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { HeroeComponent } from "./components/heroe/heroe.component";
     HomeComponent,
     AboutComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { HeroeComponent } from "./components/heroe/heroe.component";
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
