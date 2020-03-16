@@ -72,4 +72,14 @@ export class HeroesService {
   getHeroByIndex(index: number) {
     return this.heroes[index];
   }
+
+  searchHero(text: string) {
+    let herosArr: any[] = [];
+    text = text.toLowerCase();
+    herosArr = this.heroes.filter(hero => {
+      return hero.nombre.toLowerCase().includes(text);
+    });
+
+    return herosArr;
+  }
 }

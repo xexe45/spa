@@ -2,5 +2,35 @@
   <div class="container">
     <h1 class="display-4">Comic App</h1>
     <p class="lead">Esta es una aplicacion de comics.</p>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Buscar Heroe...</mat-label>
+      <input matInput placeholder="Nombre de Heroe" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
+    </mat-form-field>
+
+    <div class="form-group">
+      <button (click)="buscarHeroe(buscarTexto.value)" mat-raised-button color="primary">Buscar</button>
+    </div>
+
+
+
+  </div>
+</div>
+
+<div class="container animated fadeIn">
+  <div class="card-columns">
+    <div class="card" *ngFor="let heroe of heros; let i = index">
+      <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+      <div class="card-body">
+        <h5 class="card-title">{{ heroe.nombre }}</h5>
+        <p class="card-text">{{ heroe.bio }}</p>
+        <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+        <a [routerLink]="['/heroes', i]" class="btn btn-outline-primary btn-block">
+          Ver mas...
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>
